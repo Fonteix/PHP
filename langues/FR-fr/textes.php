@@ -1,4 +1,5 @@
 <?php
-    define('TITRE_ACCUEIL', "Ma page d'accueil");
-    define('TITRE_ERREUR', "OUPS la page n'existe pas");
-    define('ERREUR_404', "Erreur 404");
+    define('TITRE_ACCUEIL', "ACCUEIL");
+    define('TITRE_ERREUR', "PAGE INTROUVABLE");
+    define('ERREUR_404', "ERREUR 404");
+    define('LOGIN_NAME', 'Login');
