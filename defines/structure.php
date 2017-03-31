@@ -7,8 +7,7 @@
     define('PATH_FR', 'FR-fr/');
     define('PATH_LIB', 'lib/');
     define('PATH_LOG', 'log/');
+    define('PATH_MODEL', 'model/');
     define('PATH_SCRIPT', 'script/');
     define('PATH_VUE', 'vue/');
     define('LOGO', 'logo.png');
-    define('PATH_MODELS', 'Model/');
-    define('PATH_BDD', 'bdd/');

@@ -1,4 +1,5 @@
 <?php
+
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
@@ -8,13 +9,26 @@ error_reporting(E_ALL);
     require_once(PATH_DEFINES.'configuration.php');
     require_once(PATH_LANGUES.PATH_FR.'textes.php');
 
-    require_once(PATH_LIB.'base.php');
-    $base = new base();
-    require_once (PATH_LIB.PATH_BDD.'bdd.php');
+    ///// Char verification /////
+    function isAlpha($string)
+    {
+        if(isset($string) && $string!='' && is_string($string) && !preg_match('/[\W]+/', $string)==1)
+        {
+            return clean($string);
+        }
+        return false;
+    }
+
+    ///// Sanitize string /////
+    function clean($string) {
+        $string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
+
+        return preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
+    }
 
     if(isset($_GET['page']))
     {
-        if ($base->isAlpha($_GET['page'])!=false)
+        if (isAlpha($_GET['page'])!=false)
         {
             if(is_file(PATH_CONTROLLER.$_GET['page'].".php"))
             {
@@ -35,20 +49,4 @@ error_reporting(E_ALL);
         $page = "index";
     }
     require_once(PATH_CONTROLLER.$page.'.php');
-
-    $base->__destruct();
-
-    /*elseif(!isset(*secure_key) || !$base->validate());
-      //cle de securite InvalidArgumentException
-      header("location:".$url."-message-cle_securite_invalide");
-      exit();
-    elseif(!isset($identifiant) || !$base->isAlpha($identifiant));
-      //identifiant InvalidArgumentException
-      header("location:".$url."-message-identifiant_invalide");
-      exit();
-    elseif(!isset($identifiant) || !$base->isAlpha($identifiant));
-      //identifiant InvalidArgumentException
-      header("location:".$url."-message-identifiant_invalide");
-      exit();*/
-
 ?>
