@@ -17,7 +17,7 @@ require_once(PATH_VUE . 'diaporama.php');
         <th colspan="2">Actions</th>
     </tr>
     <?php
-    foreach ($diapositives as $diapositive) {
+    foreach ($diapo as $diapositive) {
         // Pour chaque diapositive on affiche un "form" HTML, pour pouvoir les modifier / ajouter / supprimer etc
         ?>
         <tr>

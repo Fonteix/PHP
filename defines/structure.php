@@ -9,7 +9,7 @@ define('PATH_LIB', 'lib/');
 define('PATH_LOG', 'log/');
 define('PATH_SCRIPT', 'JS/');
 define('PATH_VUE', 'vue/');
-define('LOGO', 'logo.png');
+define('LOGO', 'logo_site.gif');
 define('PATH_MODELS', 'Model/');
 define('PATH_BDD', 'bdd/');
 ?>

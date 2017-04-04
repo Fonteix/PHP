@@ -3,7 +3,7 @@
     <ol class="carousel-indicators">
         <?php
         // Pour chaque diapositive on affiche l'image correspondante en base de donnée
-        foreach ($diapositives as $diapositive) {
+        foreach ($diapo as $diapositive) {
             ?>
             <li data-target="#carousel-example-generic" data-slide-to="<?php echo $diapositive['ordre']; ?>"
                 id="<?php echo $diapositive['ordre']; ?>"></li>
@@ -15,7 +15,7 @@
     <div class="carousel-inner" role="listbox">
 
         <?php
-        foreach ($diapositives as $diapositive) {
+        foreach ($diapo as $diapositive) {
             if ($diapositive['ordre'] == 1) {
                 $active = $diapositive['id'];
             }
